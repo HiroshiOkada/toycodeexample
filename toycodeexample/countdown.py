@@ -8,4 +8,4 @@ def countdown(seconds=6):
         tnext = t0 + timedelta(seconds=sec+1)
         sleep((tnext - datetime.now()).total_seconds())
 
-    print("{:3d}/{:3d}: {}".format(seconds, seconds, datetime.now()))
+    print("{:3d}/{:3d}: {}".format(0, seconds, datetime.now()))
