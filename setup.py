@@ -1,14 +1,18 @@
 import setuptools
+import re
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-with open("requirements.txt") as requirements_file:
-    install_requirements = requirements_file.read().splitlines()
+with open("requirements.txt") as fh:
+    install_requirements = fh.read().splitlines()
+
+with open("toycodeexample/version.py", "r") as fh:
+    pkg_version = re.search(r"\d+\.\d+\.\d+", fh.read())[0]
 
 setuptools.setup(
     name="toycodeexample",
-    version="0.0.1",
+    version=pkg_version,
     author="Hiroshi Okada",
     author_email="okadashiroshi@miobox.jp",
     description="A small example package",
